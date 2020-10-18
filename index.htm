@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* input[type="checkbox"]:required:invalid+label::before {
+            content: "\2610";
+            padding-right: 0.2em;
+            font-size: 1.6em;
+            color: red;
+        }
+        
+        input[type="checkbox"]:required:valid+label::before {
+            content: "\2611";
+            padding-right: 0.2em;
+            font-size: 1.6em;
+            color: green;
+        }
+         */
+        
+        .removeBtn {
+            pointer-events: none;
+        }
+    </style>
+    <script>
+        function addColor() {
+            document.getElementById('habit-input').style.color = document.getElementById('favcolor').value;
+            document.getElementById('sectionText').style.color = document.getElementById('favcolor').value;
+            if (document.getElementById('Sun').checked) {
+                console.log('Tedy');
+                document.getElementById('Sun').style.background_color = document.getElementById('favcolor').value;
+            }
+        }
+
+        function addHabit() {
+
+        }
+
+        function addWeek() {
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <h3><span class="title">habit</span> tracker</h3>
+
+    <div class="inputDiv">
+        <table>
+            <tr>
+                <th>Habits</th>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thr</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="checkbox" id='Sun' value='Sunday'></td>
+                <td><input type="checkbox" id='Mon' value='Monday'></td>
+                <td><input type="checkbox" id='Tue' value='Tuesday'></td>
+                <td><input type="checkbox" id='Wed' value='wednesday'></td>
+                <td><input type="checkbox" id='Thr' value='Thursday'></td>
+                <td><input type="checkbox" id='Fri' value='Friday'></td>
+                <td><input type="checkbox" id='Sat' value='Saturday'></td>
+            </tr>
+        </table>
+
+        <div class='items'>
+
+            <!--section weeks-->
+
+            <div id="wrapper">
+                <h3>week section</h3>
+                <input type="text" id="sectionText" class="sectionText" placeholder="week.." />
+                <button id="btn-addHabit" class="btn">New week</button>
+                <button id="btn-color" class="btn" onclick='addColor()'>AddColor</button>
+                <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+            </div>
+
+            <!-- end section weeks-->
+
+            <ul class='habit-list'></ul>
+
+            <div class='habits'>
+                <!--
+                  <table>
+                    <tr>
+                      <th>item</th>
+                      <td><input type="checkbox"></td>
+                      <td><input type="checkbox"></td>
+                      <td><input type="checkbox"></td>
+                      <td><input type="checkbox"></td>
+                      <td><input type="checkbox"></td>
+                      <td><input type="checkbox"></td>
+                      <td><input type="checkbox"></td>
+                    </tr>
+                  </table>
+                  <li></li>
+                  <button class='editBtn'>edit</button>
+                  <button class='removeBtn'>remove</button>
+        
+-->
+
+            </div>
+        </div>
+
+        <div class='input'>
+            <input type="text" id='habit-input' name='habit-input' class="habit-input" placeholder="habits..">
+
+            <button type='button' class="addBtn">add</button>
+        </div>
+
+    </div>
+    <div class='error hidden'>field cant be empty</div>
+
+</body>
+
+</html>
